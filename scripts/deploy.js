@@ -9,11 +9,11 @@ async function main() {
   console.log("NFT deployed to:", nft.address);
  
   // mint one to yourself!
-  const signer0 = await ethers.provider.getSigner(0);
+  const signer0 = await new ethers.Wallet(process.env.PRIVATE_KEY);
   // update the IPFS CID to be your metadata CID
-  await nft.safeMint(await signer0.getAddress(), "ipfs://QmbCwoJB7g9b86BfEahsjzyzzNx3WEu7Jc1opXWgeTXFgb");
+  await nft.safeMint(await signer0.getAddress(), "ipfs://QmQpjpzuVtViTeDGSnaZaDaZt8aVYcoBwxqyPH9SP6MuYk");
 
-  console.log("NFT Minted!");
+  console.log("NFT Minted!"); 
 }
 
 main()
